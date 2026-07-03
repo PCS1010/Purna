@@ -165,12 +165,21 @@ export const EXPERIENCE = [
   },
   {
     role: "B.Tech Computer Science Engineering",
-    company: "University, Andhra Pradesh",
-    period: "2022 – 2026",
+    company: "College Name Coming Soon",
+    period: "2026 – Present",
     description: [
-      "Final year student specializing in AI, web technologies, and GIS systems",
-      "Built scalable applications for government, agriculture, and enterprise sectors",
+      "Second Year student specializing in AI, web technologies, and GIS systems",
+      "Building scalable applications for government, agriculture, and enterprise sectors",
       "Active contributor to open-source projects and hackathon initiatives",
+    ],
+  },
+  {
+    role: "Diploma in Computer Engineering",
+    company: "M.B.T.S Govt Polytechnic, Guntur",
+    period: "2023 – 2026",
+    description: [
+      "Completed Diploma under State Board of Technical Education and Training",
+      "Gained core knowledge in programming, database systems, and networking fundamentals",
     ],
   },
 ];
@@ -218,8 +227,8 @@ export const ACHIEVEMENTS = [
 ];
 
 export const CONTACT = {
-  email: "purnachandrasekhar@email.com",
+  email: "chpurna506@gmail.com",
   github: "https://github.com/purnachandrasekhar",
-  linkedin: "https://linkedin.com/in/purnachandrasekhar",
+  linkedin: "https://www.linkedin.com/in/ch-purna-chandra-sekhar-9633ab2a4",
   portfolio: "https://purnachandrasekhar.dev",
 };
