@@ -155,7 +155,7 @@ export const EXPERIENCE = [
   {
     role: "Freelance Full Stack Developer",
     company: "Self-Employed",
-    period: "2023 – Present",
+    period: "Present",
     description: [
       "Developed responsive web applications using Next.js, React, and Tailwind CSS",
       "Built AI-powered dashboards integrating machine learning models with modern frontends",
