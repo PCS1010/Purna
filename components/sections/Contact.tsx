@@ -29,11 +29,25 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    const emailSubject = encodeURIComponent(`[Portfolio Contact] ${form.subject}`);
+    const emailBody = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\n\nMessage:\n${form.message}`
+    );
+
+    // Open mailto link directed to user's email
+    window.location.href = `mailto:${CONTACT.email}?subject=${emailSubject}&body=${emailBody}`;
+
     setTimeout(() => {
       setLoading(false);
       setSent(true);
-    }, 1500);
+    }, 1000);
   };
+
+  const whatsappText = encodeURIComponent(
+    `Hi Purna,\n*Name:* ${form.name}\n*Email:* ${form.email}\n*Subject:* ${form.subject}\n\n*Message:* ${form.message}`
+  );
+  const whatsappUrl = `https://wa.me/919182386841?text=${whatsappText}`;
 
   return (
     <section id="contact" className="py-24 bg-[#0a0a0f]">
@@ -42,7 +56,7 @@ export default function Contact() {
           eyebrow="Get In Touch"
           title="Let's"
           highlight="Connect"
-          subtitle="Have a project idea or want to collaborate? I'd love to hear from you!"
+          subtitle="Have a project idea or want to collaborate? Send me a direct message!"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -61,8 +75,7 @@ export default function Contact() {
               </h3>
               <p className="text-white/50 text-sm leading-relaxed font-['Space_Grotesk'] mb-6">
                 I&apos;m actively looking for full-time roles, freelance projects, and hackathon
-                collaborations. Whether you have a project in mind or just want to connect, 
-                feel free to reach out!
+                collaborations. Messages sent here directly reach my email (<span className="text-cyan-400 font-medium">chpurna506@gmail.com</span>) and phone (<span className="text-green-400 font-medium">+91 9182386841</span>).
               </p>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -97,17 +110,39 @@ export default function Contact() {
           >
             <GlassCard className="p-8" glow="cyan">
               {sent ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
+                <div className="flex flex-col items-center justify-center py-8 text-center">
                   <div className="text-5xl mb-4">🎉</div>
-                  <h3 className="text-white font-bold text-lg font-['Poppins'] mb-2">Message Sent!</h3>
-                  <p className="text-white/50 text-sm font-['Space_Grotesk']">
-                    Thanks for reaching out! I&apos;ll get back to you within 24 hours.
+                  <h3 className="text-white font-bold text-lg font-['Poppins'] mb-2">Ready to Send!</h3>
+                  <p className="text-white/60 text-sm font-['Space_Grotesk'] mb-6 max-w-md leading-relaxed">
+                    Your message has been pre-filled for email (<span className="text-cyan-300">chpurna506@gmail.com</span>). You can also send it directly via WhatsApp:
                   </p>
+
+                  <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-green-600 hover:bg-green-500 text-white text-xs font-bold font-['Space_Grotesk'] transition-all shadow-lg shadow-green-600/30"
+                    >
+                      Send via WhatsApp (+91 9182386841)
+                    </a>
+                    <button
+                      onClick={() => {
+                        const emailSubject = encodeURIComponent(`[Portfolio Contact] ${form.subject}`);
+                        const emailBody = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+                        window.location.href = `mailto:${CONTACT.email}?subject=${emailSubject}&body=${emailBody}`;
+                      }}
+                      className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold font-['Space_Grotesk'] transition-all shadow-lg shadow-blue-600/30"
+                    >
+                      Re-open Email App
+                    </button>
+                  </div>
+
                   <button
                     onClick={() => { setSent(false); setForm({ name: "", email: "", subject: "", message: "" }); }}
-                    className="mt-6 px-5 py-2.5 rounded-xl bg-blue-600/20 border border-blue-500/30 text-blue-400 text-sm font-['Space_Grotesk'] hover:bg-blue-600/30 transition-all"
+                    className="mt-6 text-white/40 hover:text-white text-xs font-['Space_Grotesk'] underline transition-colors"
                   >
-                    Send Another
+                    Send Another Message
                   </button>
                 </div>
               ) : (
@@ -168,12 +203,12 @@ export default function Contact() {
                     {loading ? (
                       <>
                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Sending...
+                        Preparing Message...
                       </>
                     ) : (
                       <>
                         <IconSend size={16} />
-                        Send Message
+                        Send Message (to Email & WhatsApp)
                       </>
                     )}
                   </motion.button>
