@@ -74,13 +74,13 @@ export default function Navbar() {
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 via-cyan-500 to-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.4)] group-hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] transition-shadow">
               <span className="text-white font-bold text-lg font-['Poppins']">P</span>
             </div>
-            <span className="hidden sm:block text-white font-semibold text-sm font-['Space_Grotesk'] tracking-wide">
-              Purna<span className="text-cyan-400">.</span>dev
+            <span className="hidden sm:block text-white font-bold text-base font-['Space_Grotesk'] tracking-wide">
+              Purna<span className="text-cyan-400">.dev</span>
             </span>
           </button>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1.5">
             {NAV_LINKS.map((link) => {
               const id = link.href.slice(1);
               const isActive = active === id;
@@ -88,16 +88,16 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className={`relative px-3.5 py-1.5 text-xs font-medium tracking-wide font-['Space_Grotesk'] rounded-lg transition-all ${
+                  className={`relative px-3.5 py-1.5 text-xs font-semibold tracking-wide font-['Space_Grotesk'] rounded-lg transition-all duration-200 ${
                     isActive
-                      ? "text-white"
-                      : "text-white/50 hover:text-white/80"
+                      ? "text-cyan-300 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+                      : "text-white/90 hover:text-white hover:bg-white/[0.08]"
                   }`}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="navpill"
-                      className="absolute inset-0 rounded-lg bg-white/[0.08] border border-white/[0.1]"
+                      className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600/30 to-cyan-500/30 border border-cyan-400/40 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
                     />
                   )}
                   <span className="relative z-10">{link.label}</span>
@@ -110,7 +110,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-xl bg-white/[0.05] border border-white/[0.08] text-white/70 hover:text-white transition-all hover:bg-white/[0.1] flex items-center justify-center cursor-pointer"
+              className="p-2 rounded-xl bg-white/[0.08] border border-white/[0.15] text-white hover:text-cyan-400 transition-all hover:bg-white/[0.15] flex items-center justify-center cursor-pointer shadow-sm"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? <IconSun size={18} /> : <IconMoon size={18} />}
@@ -118,12 +118,12 @@ export default function Navbar() {
             <a
               href="/resume.pdf"
               download
-              className="hidden sm:flex items-center gap-1.5 px-4 py-2 text-xs font-semibold font-['Space_Grotesk'] rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all hover:scale-105"
+              className="hidden sm:flex items-center gap-1.5 px-4 py-2 text-xs font-bold font-['Space_Grotesk'] tracking-wide rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] transition-all hover:scale-105"
             >
               Resume
             </a>
             <button
-              className="lg:hidden p-2 text-white/60 hover:text-white"
+              className="lg:hidden p-2 text-white hover:text-cyan-400"
               onClick={() => setMenuOpen(true)}
             >
               <IconMenu2 size={22} />
@@ -141,7 +141,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm"
               onClick={() => setMenuOpen(false)}
             />
             <motion.aside
@@ -150,11 +150,11 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed right-0 top-0 bottom-0 z-[70] w-72 bg-[#0d0d17] border-l border-white/[0.08] p-6 flex flex-col"
+              className="fixed right-0 top-0 bottom-0 z-[70] w-72 bg-[#0d0d17] border-l border-white/[0.12] p-6 flex flex-col"
             >
               <div className="flex items-center justify-between mb-8">
-                <span className="text-white font-semibold font-['Poppins']">Menu</span>
-                <button onClick={() => setMenuOpen(false)} className="text-white/60 hover:text-white">
+                <span className="text-white font-bold text-base font-['Poppins']">Navigation</span>
+                <button onClick={() => setMenuOpen(false)} className="text-white/80 hover:text-white">
                   <IconX size={22} />
                 </button>
               </div>
@@ -165,10 +165,10 @@ export default function Navbar() {
                     <button
                       key={link.href}
                       onClick={() => scrollTo(link.href)}
-                      className={`text-left px-4 py-3 rounded-xl font-['Space_Grotesk'] text-sm transition-all ${
+                      className={`text-left px-4 py-3 rounded-xl font-['Space_Grotesk'] text-sm font-semibold transition-all ${
                         active === id
-                          ? "bg-blue-600/20 text-blue-400 border border-blue-500/30"
-                          : "text-white/60 hover:bg-white/[0.04] hover:text-white"
+                          ? "bg-blue-600/30 text-cyan-300 border border-cyan-400/40 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+                          : "text-white/90 hover:bg-white/[0.08] hover:text-white"
                       }`}
                     >
                       {link.label}

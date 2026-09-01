@@ -50,8 +50,8 @@ export default function About() {
 
               <div className="space-y-4 text-white/60 text-sm leading-relaxed font-['Space_Grotesk']">
                 <p>
-                  Second Year <span className="text-white font-semibold">B.Tech Computer Science Engineering</span> student 
-                  from Andhra Pradesh with a passion for building intelligent digital solutions.
+                  <span className="text-white font-semibold">B.Tech Artificial Intelligence & Machine Learning</span> student 
+                  at <span className="text-cyan-400 font-medium">Krishna Chaitanya Institute of Science & Technology</span> with a passion for building intelligent digital solutions.
                 </p>
                 <p>
                   I enjoy solving real-world problems through <span className="text-cyan-400">AI</span>,{" "}

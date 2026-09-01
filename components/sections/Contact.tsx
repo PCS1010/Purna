@@ -15,10 +15,10 @@ import {
 } from "@tabler/icons-react";
 
 const socials = [
-  { icon: IconMail, label: "Email", value: "purnachandrasekhar@email.com", href: `mailto:${CONTACT.email}`, color: "from-orange-500 to-red-400" },
-  { icon: IconBrandGithub, label: "GitHub", value: "github.com/purnachandrasekhar", href: CONTACT.github, color: "from-gray-500 to-gray-400" },
-  { icon: IconBrandLinkedin, label: "LinkedIn", value: "linkedin.com/in/purnachandrasekhar", href: CONTACT.linkedin, color: "from-blue-600 to-blue-400" },
-  { icon: IconWorld, label: "Portfolio", value: "purnachandrasekhar.dev", href: CONTACT.portfolio, color: "from-green-500 to-emerald-400" },
+  { icon: IconMail, label: "Email", value: CONTACT.email, href: `mailto:${CONTACT.email}`, color: "from-orange-500 to-red-400" },
+  { icon: IconPhone, label: "Mobile", value: CONTACT.phone, href: `tel:${CONTACT.phone.replace(/\s+/g, '')}`, color: "from-green-500 to-emerald-400" },
+  { icon: IconBrandGithub, label: "GitHub", value: "github.com/PCS1010", href: CONTACT.github, color: "from-purple-500 to-indigo-400" },
+  { icon: IconBrandLinkedin, label: "LinkedIn", value: "linkedin.com/in/ch-purna-chandra-sekhar", href: CONTACT.linkedin, color: "from-blue-600 to-blue-400" },
 ];
 
 export default function Contact() {

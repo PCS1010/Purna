@@ -73,29 +73,30 @@ export const SKILLS = {
 
 export type ProjectCategory = "All" | "AI" | "Web" | "GIS" | "Agri";
 
-export const PROJECTS = [
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  tech: string[];
+  category: ProjectCategory[];
+  gradient: string;
+  icon: string;
+  featured?: boolean;
+  features?: string[];
+  link?: string;
+}
+
+export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "AI Urban Utility Intelligence Platform",
     description:
       "AI-powered smart city dashboard with GIS visualization, infrastructure analytics, forecasting engine, verification workflow, and intelligent AI recommendations for urban planning decisions.",
     tech: ["Next.js", "React", "Leaflet", "Supabase", "AI", "GIS"],
-    category: ["AI", "GIS", "Web"] as ProjectCategory[],
+    category: ["AI", "GIS", "Web"],
     gradient: "from-blue-600 to-cyan-400",
     icon: "🏙️",
     featured: true,
-  },
-  {
-    id: 2,
-    title: "Kesava Musicals",
-    description:
-      "Modern music instrument e-commerce website with a responsive UI, rich product catalog, premium glassmorphism design, and seamless Vercel deployment.",
-    tech: ["Next.js", "Supabase", "Tailwind CSS"],
-    category: ["Web"] as ProjectCategory[],
-    gradient: "from-purple-600 to-pink-400",
-    icon: "🎸",
-    featured: true,
-    link: "https://kesavamusicals.vercel.app",
   },
   {
     id: 3,
@@ -103,7 +104,7 @@ export const PROJECTS = [
     description:
       "Automated attendance system using real-time face recognition, geofencing, admin dashboard, Excel report generation, and SMS alerts for institutions.",
     tech: ["Python", "Flask", "OpenCV", "MySQL"],
-    category: ["AI"] as ProjectCategory[],
+    category: ["AI"],
     gradient: "from-green-500 to-emerald-400",
     icon: "👤",
     features: [
@@ -121,7 +122,7 @@ export const PROJECTS = [
     description:
       "Comprehensive digital management system for granite quarries with permit management, vehicle tracking, weighbridge integration, and district-level analytics dashboard.",
     tech: ["Next.js", "Supabase", "Python", "GIS"],
-    category: ["Web", "GIS"] as ProjectCategory[],
+    category: ["Web", "GIS"],
     gradient: "from-orange-500 to-red-400",
     icon: "⛏️",
     features: [
@@ -138,7 +139,7 @@ export const PROJECTS = [
     description:
       "AI-powered leaf disease classification system for mulberry cultivation with computer vision, farmer-friendly dashboard, and intelligent crop health recommendations.",
     tech: ["Python", "TensorFlow", "OpenCV", "Flask"],
-    category: ["AI", "Agri"] as ProjectCategory[],
+    category: ["AI", "Agri"],
     gradient: "from-teal-500 to-cyan-400",
     icon: "🌿",
     features: [
@@ -164,11 +165,11 @@ export const EXPERIENCE = [
     ],
   },
   {
-    role: "B.Tech Computer Science Engineering",
-    company: "College Name Coming Soon",
+    role: "B.Tech Artificial Intelligence & Machine Learning",
+    company: "Krishna Chaitanya Institute of Science & Technology",
     period: "2026 – Present",
     description: [
-      "Second Year student specializing in AI, web technologies, and GIS systems",
+      "Specializing in AI/ML algorithms, computer vision, web technologies, and GIS systems",
       "Building scalable applications for government, agriculture, and enterprise sectors",
       "Active contributor to open-source projects and hackathon initiatives",
     ],
@@ -217,7 +218,7 @@ export const ACHIEVEMENTS = [
   {
     icon: "⚡",
     title: "Modern Full Stack Applications",
-    description: "Shipped production-ready full stack apps using Next.js 14, Supabase, and edge-deployed on Vercel.",
+    description: "Shipped production-ready full stack apps using Next.js, Supabase, and edge-deployed on Vercel.",
   },
   {
     icon: "🐙",
@@ -228,7 +229,8 @@ export const ACHIEVEMENTS = [
 
 export const CONTACT = {
   email: "chpurna506@gmail.com",
-  github: "https://github.com/purnachandrasekhar",
+  phone: "+91 9182386841",
+  github: "https://github.com/PCS1010",
   linkedin: "https://www.linkedin.com/in/ch-purna-chandra-sekhar-9633ab2a4",
   portfolio: "https://purnachandrasekhar.dev",
 };

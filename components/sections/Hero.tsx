@@ -111,7 +111,7 @@ export default function Hero() {
             transition={{ delay: 3.55, duration: 0.6 }}
             className="text-white/50 text-base leading-relaxed font-['Space_Grotesk'] max-w-lg mb-10"
           >
-            B.Tech CSE Second Year student from Andhra Pradesh, passionate about
+            B.Tech AI & ML student at Krishna Chaitanya Institute of Science & Technology, passionate about
             building intelligent digital solutions with AI, modern web technologies,
             and GIS systems.
           </motion.p>
