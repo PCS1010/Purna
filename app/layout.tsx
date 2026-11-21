@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import CursorGlow from "@/components/ui/CursorGlow";
 import ScrollProgress from "@/components/ui/ScrollProgress";
@@ -58,6 +59,13 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
+      <head>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6039438231942654"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="min-h-full bg-[#0a0a0f] text-[#f3f4f6] font-['Space_Grotesk'] antialiased">
         <ScrollProgress />
         <CursorGlow />
