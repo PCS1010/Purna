@@ -63,7 +63,7 @@ export default function RootLayout({
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6039438231942654"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
       </head>
       <body className="min-h-full bg-[#0a0a0f] text-[#f3f4f6] font-['Space_Grotesk'] antialiased">
