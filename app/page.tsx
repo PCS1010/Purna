@@ -9,6 +9,7 @@ import Certifications from "@/components/sections/Certifications";
 import Achievements from "@/components/sections/Achievements";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
+import AdUnit from "@/components/ui/AdUnit";
 
 export default function Home() {
   return (
@@ -18,10 +19,13 @@ export default function Home() {
       <main className="relative min-h-screen bg-[#0a0a0f] overflow-hidden">
         <Hero />
         <About />
+        <AdUnit />
         <Skills />
         <Projects />
+        <AdUnit />
         <Experience />
         <Certifications />
+        <AdUnit />
         <Achievements />
         <Contact />
       </main>
