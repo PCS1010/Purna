@@ -74,6 +74,11 @@ export default function Footer() {
           <p className="text-white/30 text-xs font-['Space_Grotesk']">
             © {new Date().getFullYear()} Purna Chandra Sekhar. All rights reserved.
           </p>
+          <div className="flex items-center gap-4">
+            <a href="/about" className="text-white/30 hover:text-cyan-400 text-xs font-['Space_Grotesk'] transition-colors">About</a>
+            <a href="/privacy-policy" className="text-white/30 hover:text-cyan-400 text-xs font-['Space_Grotesk'] transition-colors">Privacy Policy</a>
+            <a href="/terms" className="text-white/30 hover:text-cyan-400 text-xs font-['Space_Grotesk'] transition-colors">Terms</a>
+          </div>
           <p className="text-white/30 text-xs font-['Space_Grotesk'] flex items-center gap-1">
             Designed & Developed with{" "}
             <IconHeart size={12} className="text-red-400 fill-red-400" />{" "}
